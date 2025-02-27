@@ -1,0 +1,161 @@
+.app-header {
+  backdrop-filter: blur(8px);
+  background: rgba(255, 255, 255, 0.4);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  padding: 0.2rem 0.5rem;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  position: relative;
+}
+
+.header-content {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0.3rem 1rem 0.3rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+/* Desktop-only extreme positioning */
+@media screen and (min-width: 1400px) {
+  .logo-container {
+    position: absolute;
+    left: -4rem;
+  }
+
+  .nav-links {
+    position: absolute;
+    right: -4rem;
+  }
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-top: -4px;
+  min-width: fit-content;
+  margin-left: 1rem;
+}
+
+.logo {
+  height: 35px;
+  width: auto;
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 32px;
+  color: #333;
+}
+
+.nav-links {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  margin-right: 1rem;
+}
+
+.logout-btn {
+  background: none;
+  border: 1.5px solid #000000d0;
+  color: #000000;
+  padding: 0.5rem 1.2rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  margin-top: 1px;
+}
+
+.logout-btn:hover {
+  background: #6d6e6d;
+  color: white;
+}
+
+/* Responsive styles */
+@media screen and (max-width: 1399px) {
+  .header-content {
+    width: 95%;
+    padding: 0.8rem;
+  }
+
+  .logo-container {
+    position: static;
+    margin-left: 1rem;
+  }
+
+  .nav-links {
+    position: static;
+    margin-right: 1rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .app-header {
+    height: 60px;
+  }
+
+  .header-content {
+    width: 95%;
+    padding: 0.5rem;
+  }
+
+  .logo {
+    height: 28px;
+  }
+
+  .header h1 {
+    font-size: 24px;
+    white-space: nowrap;
+  }
+
+  .logout-btn {
+    padding: 0.4rem 1rem;
+    font-size: 14px;
+    margin-top: 0.3rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .app-header {
+    height: auto;
+    min-height: 55px;
+    padding: 0.5rem;
+  }
+
+  .header-content {
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0 0.5rem;
+  }
+
+  .logo-container {
+    margin: 0;
+    padding: 0;
+  }
+
+  .logo {
+    height: 24px;
+  }
+
+  .header h1 {
+    font-size: 20px;
+  }
+
+  .nav-links {
+    margin: 0;
+  }
+
+  .logout-btn {
+    padding: 0.3rem 0.8rem;
+    font-size: 13px;
+  }
+}

@@ -1,0 +1,548 @@
+/* Remove body scroll */
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.donor-dashboard {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1.5rem 1rem;  /* Increased padding */
+  position: relative;
+  min-height: 100vh;
+}
+
+.donor-dashboard::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('../../assets/Background_donor1.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.75;
+  z-index: -1;
+}
+
+.dashboard-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Changed from 0.8fr 1.2fr to make sections equal width */
+  gap: 1.3rem;
+  margin-top: 1.5rem;
+  align-items: start;
+}
+
+.donation-form-section {
+  background: rgba(255, 255, 255, 0.4);
+  padding: 1.2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  height: 350px;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  backdrop-filter: blur(7.5x);
+}
+
+.donations-section {
+  background: rgba(255, 255, 255, 0.4);
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  height: 350px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  overflow: hidden;
+  backdrop-filter: blur(8px);
+}
+
+/* Add container for the donations list with border and scroll */
+.donations-list-container {
+  border: 1px solid rgba(222, 226, 230, 0.3);
+  border-radius: 4px;
+  overflow-y: auto;
+  margin-top: 10px;
+  flex: 1;
+  position: relative;
+  background: rgba(255, 255, 255, 0.3);
+  height: calc(100% - 50px);
+  backdrop-filter: blur(1px);
+
+}
+
+/* Style the scrollbar */
+.donations-list-container::-webkit-scrollbar {
+  width: 6px;
+  display: none;
+}
+
+.donations-list-container:hover::-webkit-scrollbar {
+  display: block;
+}
+
+.donations-list-container::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 3px;
+}
+
+.donations-list-container::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 3px;
+}
+
+.donations-list-container::-webkit-scrollbar-thumb:hover {
+  background: #666;
+}
+
+/* Form styling */
+.donation-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;  /* Increased from 0.8rem */
+  height: 100%;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.form-group label {
+  font-weight: 600;
+  color: #222;
+  font-size: 0.95rem;
+}
+
+.form-group input,
+.form-group textarea {
+  background: rgba(255, 255, 255, 0.6);
+  padding: 0.6rem;
+  border: 1px solid rgba(221, 221, 221, 0.4);
+  border-radius: 4px;
+  font-size: 0.95rem;
+  backdrop-filter: blur(4px);
+}
+
+.form-group textarea {
+  min-height: 100px;  /* Increased from 60px */
+  max-height: 150px;  /* Increased from 100px */
+  resize: vertical;
+}
+
+/* Donations list */
+.donations-list {
+  padding: 0;
+  margin-top: -2px; /* Compensate for header border */
+}
+
+.donation-card {
+  background: rgba(248, 249, 250, 0.4);
+  padding: 0.8rem;
+  border-radius: 6px;
+  border-left: 4px solid rgba(76, 175, 80, 0.7);
+  margin: 0;
+  backdrop-filter: blur(8px);
+}
+
+.donation-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.donation-details p {
+  margin: 0;
+  color: #666;
+  line-height: 1.3;
+  font-size: 0.9rem;
+}
+
+.donation-details strong {
+  color: #333;
+  margin-right: 0.5rem;
+  font-weight: 600;
+}
+
+/* Buttons */
+.submit-btn {
+  padding: 0.6rem;
+  background: #676767;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: background-color 0.2s;
+  margin-top: auto;
+}
+
+.submit-btn:hover {
+  background: #484848;
+}
+
+/* Section Headers */
+.donation-form-section h2,
+.donations-section h2 {
+  margin-bottom: 1rem;
+  color: #222;
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+/* Dashboard title */
+.donor-dashboard h1 {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  font-size: 1.8rem;
+  color: #222;
+  font-weight: 600;
+}
+
+.profile-info {
+  margin-bottom: 1.2rem;
+  color: #0a0808;
+  font-weight: 500;
+}
+
+/* Status badges */
+.status-badge {
+  display: inline-flex;
+  padding: 0.25rem 0.75rem;
+  border-radius: 1rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: capitalize;
+  white-space: nowrap;
+  min-width: fit-content;
+}
+
+.status-accepted {
+  background-color: rgba(76, 175, 80, 0.7);
+  color: white;
+  backdrop-filter: blur(4px);
+}
+
+.status-available {
+  background-color: rgba(255, 235, 59, 0.7);
+  color: black;
+  backdrop-filter: blur(4px);
+}
+
+.status-completed {
+  background-color: rgba(245, 245, 245, 0.4);
+  color: #616161;
+  backdrop-filter: blur(4px);
+}
+
+.no-donations {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #666;
+  font-size: 0.9rem;
+  text-align: center;
+  width: calc(100% - 1.6rem);
+  margin: 0;
+  padding: 0;
+}
+
+.notification-popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.notification-content {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  max-width: 500px;
+  width: 90%;
+  max-height: 80vh;
+  overflow-y: auto;
+}
+
+.notification-content h3 {
+  color: #2c3e50;
+  margin-bottom: 15px;
+}
+
+.organization-details,
+.request-details {
+  margin-top: 15px;
+  padding: 15px;
+  background: #f8f9fa;
+  border-radius: 4px;
+  border-left: 4px solid #4CAF50;
+}
+
+.organization-details h4,
+.request-details h4 {
+  margin: 0 0 10px 0;
+  color: #2c3e50;
+}
+
+.organization-details p,
+.request-details p {
+  margin: 5px 0;
+  color: #666;
+}
+
+.organization-details strong,
+.request-details strong {
+  color: #2c3e50;
+  margin-right: 5px;
+}
+
+.close-btn {
+  margin-top: 15px;
+  padding: 8px 16px;
+  background: #dc3545;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.close-btn:hover {
+  background: #c82333;
+}
+
+.notifications-section {
+  grid-column: 1 / -1;
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-top: 2rem;
+}
+
+.notifications-list {
+  display: grid;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.notification-card {
+  background: #f8f9fa;
+  padding: 1rem;
+  border-radius: 4px;
+  border-left: 4px solid #007bff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.notification-time {
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.view-details-btn {
+  padding: 0.5rem 1rem;
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.view-details-btn:hover {
+  background: #0056b3;
+}
+
+.details-grid {
+  display: grid;
+  gap: 10px;
+}
+
+.detail-item {
+  display: grid;
+  grid-template-columns: 100px 1fr;
+  align-items: center;
+  padding: 5px 0;
+}
+
+.detail-label {
+  font-weight: 600;
+  color: #495057;
+}
+
+.detail-value {
+  color: #212529;
+}
+
+.donation-status {
+  display: flex;
+  align-items: center;
+  margin: 0.5rem 0;
+}
+
+.donation-card[data-status='closed'] {
+  opacity: 0.7;
+  border-left-color: #9E9E9E;
+}
+
+.donations-section h2 {
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.donations-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  background: transparent;
+}
+
+.table-header {
+  display: table-header-group;
+  background: transparent;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.header-row {
+  display: table-row;
+}
+
+.header-cell {
+  display: table-cell;
+  padding: 12px 20px;
+  font-weight: 600;
+  color: #333;
+  text-align: center;
+  border-bottom: 1px solid rgba(222, 226, 230, 0.3);
+  background: rgba(255, 255, 255, 0.4);
+  white-space: nowrap;
+  position: sticky;
+  top: 0;
+  backdrop-filter: blur(-100rem);
+}
+
+.table-body {
+  display: table-row-group;
+}
+
+.table-row {
+  display: table-row;
+  border-bottom: 1px solid rgba(222, 226, 230, 0.3);
+  background: transparent;
+}
+
+.table-row:hover .table-cell {
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.table-cell {
+  display: table-cell;
+  padding: 12px 20px;
+  color: #333;
+  text-align: center;
+  vertical-align: middle;
+  background: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(4.5px);
+}
+
+/* Status badge styling */
+.status-badge {
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 0.85em;
+  font-weight: 500;
+  text-transform: capitalize;
+  justify-content: center; /* Added to center badge content */
+  align-items: center; /* Added to center badge content vertically */
+  margin: 0 auto; /* Added to center the badge in its cell */
+}
+
+/* Add border container for donations content */
+.donations-content {
+  border: 1px solid rgba(222, 226, 230, 0.3);
+  border-radius: 8px;
+  padding: 0.8rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background: rgba(255, 255, 255, 0.3);
+  overflow: hidden;
+  margin-bottom: 0;
+  backdrop-filter: blur(8px);
+}
+
+/* Remove max-height constraint */
+.donations-content {
+  max-height: none;
+}
+
+/* Remove scrollbar styles since they're no longer needed */
+.donations-content::-webkit-scrollbar {
+  display: none;
+}
+
+/* Update the donations table container */
+.donations-table-container {
+  border: 1px solid rgba(222, 226, 230, 0.3);
+  border-radius: 8px;
+  padding: 1rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background: rgba(255, 255, 255, 0.3);
+  overflow: hidden;
+  position: relative;
+  min-height: 100px;
+  backdrop-filter: blur(8px);
+}
+
+/* Add this to position toasts lower in the donor dashboard */
+.donor-dashboard .toast {
+  top: 80px; /* Adjust this value as needed */
+}
+
+/* Ensure table header has background */
+.table-header {
+  background: #f8f9fa;
+}
+
+/* Remove the after pseudo-element since we're using box-shadow */
+.table-header::after {
+  display: none;
+}
+
+.donations-list-container:not(:hover)::-webkit-scrollbar {
+  display: none;
+}
+
+/* Adjust column widths for better fit */
+.header-cell:nth-child(1), .table-cell:nth-child(1) { width: 22%; text-align: center; } /* Organization */
+.header-cell:nth-child(2), .table-cell:nth-child(2) { width: 15%; text-align: center; } /* Contact */
+.header-cell:nth-child(3), .table-cell:nth-child(3) { width: 13%; text-align: center; } /* Quantity */
+.header-cell:nth-child(4), .table-cell:nth-child(4) { width: 20%; text-align: center; } /* Description */
+.header-cell:nth-child(5), .table-cell:nth-child(5) { width: 15%; text-align: center; } /* Status */
+
+.donor-welcome {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  font-size: 1.8rem;
+  color: #222;
+  font-weight: 600;
+}

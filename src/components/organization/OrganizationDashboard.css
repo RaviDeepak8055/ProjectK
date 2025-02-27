@@ -1,0 +1,853 @@
+add/* Remove body scroll */
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.organization-dashboard {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1.5rem 1rem;
+}
+
+.organization-dashboard::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('../../assets/Background_organization.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.80;
+  z-index: -1;
+}
+
+.dashboard-content {
+  display: flex;
+  gap: 1.3rem;
+  margin-top: 1.5rem;
+}
+
+.left-column {
+  display: flex;
+  flex-direction: column;
+  gap: 1.3rem;
+  width: 47%;
+  padding-bottom: 0;
+}
+
+/* Sections */
+.matches-section {
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: 8px;
+  padding: 0.6rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  min-height: 320px;
+  max-height: 561px;
+  display: flex;
+  flex-direction: column;
+  width: 53%;
+  overflow: hidden;
+  backdrop-filter: blur(8px);
+}
+
+.matches-section h2 {
+  margin-bottom: 0.4rem;
+  color: #333;
+  font-size: 1.5rem;
+  padding: 0 0.2rem;
+}
+
+/* Update table header styles */
+.matches-table-header {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr 0.8fr 1.5fr 1fr;
+  background: #f8f9fa;
+  padding: 0.8rem;
+  font-weight: 600;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  border-bottom: 2px solid #dee2e6;
+  gap: 1rem;
+}
+
+.header-cell {
+  padding: 0.6rem;
+  color: #495057;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+/* Update table row styles */
+.matches-table-row {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr 0.8fr 1.5fr 1fr;
+  border-bottom: 1px solid #dee2e6;
+  padding: 0.8rem;
+  gap: 1rem;
+  align-items: center;
+}
+
+.matches-content {
+  border: 1px solid rgba(222, 226, 230, 0.3);
+  border-radius: 8px;
+  padding: 0.8rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background: rgba(255, 255, 255, 0.3);
+  overflow-y: auto;
+  position: relative;
+  min-height: 200px;
+  backdrop-filter: blur(8px);
+}
+
+/* Ensure header stays visible */
+.matches-content::-webkit-scrollbar-track {
+  margin-top: 50px; /* Add space for header */
+}
+
+/* Style the scrollbar */
+.matches-content::-webkit-scrollbar {
+  width: 6px;
+}
+
+.matches-content::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 3px;
+}
+
+.matches-content::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 3px;
+}
+
+.matches-content::-webkit-scrollbar-thumb:hover {
+  background: #666;
+}
+
+/* Ensure the table header stays in place */
+.matches-table-header {
+  position: sticky;
+  top: 0;
+  background: #fff;
+  z-index: 1;
+  border-bottom: 2px solid #dee2e6;
+  padding: 0.5rem;
+}
+
+.previous-donations-section {
+  background: rgba(255, 255, 255, 0.4);
+  padding: 0.6rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  height: 220px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  border: 1px solid rgba(222, 226, 230, 0.3);
+  backdrop-filter: blur(8px);
+}
+
+.previous-donations-section h2 {
+  margin: 0 0 0.4rem 0;
+  color: #333;
+  font-size: 1.5rem;
+  padding: 0 0.2rem;
+}
+
+.previous-donations-list {
+  flex: 1;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.previous-donations-table-container {
+  flex: 1;
+  overflow-y: auto;
+  border: 1px solid rgba(222, 226, 230, 0.3);
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.3);
+  position: relative;
+  backdrop-filter: blur(8px);
+}
+
+/* Table styling */
+.previous-donations-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+/* Fixed header */
+.previous-donations-table thead {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  background: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(8px);
+}
+
+.previous-donations-table th {
+  background: rgba(248, 249, 250, 0.4);
+  padding: 0.8rem;
+  text-align: center;
+  font-weight: 600;
+  color: #333;
+  border-bottom: 1px solid rgba(222, 226, 230, 0.3);
+  backdrop-filter: blur(8px);
+}
+
+/* Table body styling */
+.previous-donations-table tbody tr {
+  border-bottom: 1px solid rgba(222, 226, 230, 0.3);
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.previous-donations-table tbody tr:last-child {
+  border-bottom: none;
+}
+
+.previous-donations-table td {
+  padding: 0.8rem;
+  color: #666;
+  text-align: center;
+}
+
+.previous-donations-table tbody tr:hover {
+  background: rgba(248, 249, 250, 0.5);
+}
+
+/* Scrollbar styling */
+.previous-donations-table-container::-webkit-scrollbar {
+  width: 6px;
+  display: none;
+}
+
+.previous-donations-table-container:hover::-webkit-scrollbar {
+  display: block;
+}
+
+.previous-donations-table-container::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 3px;
+}
+
+.previous-donations-table-container::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 3px;
+}
+
+.previous-donations-table-container::-webkit-scrollbar-thumb:hover {
+  background: #666;
+}
+
+/* No donations message */
+.no-donations-message {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #666;
+  font-size: 0.95rem;
+  text-align: center;
+  padding: 1rem 2rem;
+  border: 2px dashed #ddd;
+  border-radius: 8px;
+  background-color: rgba(248, 249, 250, 0.8);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  min-width: 200px;
+  width: auto;
+  z-index: 1;
+}
+
+/* Lists */
+.matches-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  padding-right: 0.8rem;
+  height: 100%;
+  overflow-y: auto;
+}
+
+.request-container {
+  background: #fff;
+  border-radius: 8px;
+  border: 1px solid #dee2e6;
+  padding: 1rem;
+  flex-shrink: 0;
+}
+
+/* Scrollbar Styles */
+.matches-list::-webkit-scrollbar,
+.previous-donations-list::-webkit-scrollbar,
+.requests-list::-webkit-scrollbar,
+.matches-content::-webkit-scrollbar {
+  width: 6px;
+}
+
+.matches-list::-webkit-scrollbar-track,
+.previous-donations-list::-webkit-scrollbar-track,
+.requests-list::-webkit-scrollbar-track,
+.matches-content::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 3px;
+}
+
+.matches-list::-webkit-scrollbar-thumb,
+.previous-donations-list::-webkit-scrollbar-thumb,
+.requests-list::-webkit-scrollbar-thumb,
+.matches-content::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 3px;
+}
+
+.matches-list::-webkit-scrollbar-thumb:hover,
+.previous-donations-list::-webkit-scrollbar-thumb:hover,
+.requests-list::-webkit-scrollbar-thumb:hover,
+.matches-content::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
+}
+
+/* Cards */
+.match-card,
+.donation-history-card {
+  background: #f8f9fa;
+  padding: 0.8rem;
+  border-radius: 6px;
+  border-left: 4px solid #4CAF50;
+  margin: 0;
+  flex-shrink: 0;
+  max-height: fit-content;
+}
+
+/* Single match card (when only one match) */
+.matches-list:only-child .match-card {
+  height: auto;
+  overflow: visible;
+}
+
+.match-details,
+.donation-history-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.match-details p,
+.donation-history-details p {
+  margin: 0;
+  color: #666;
+  line-height: 1.3;
+  font-size: 0.9rem;
+  white-space: normal;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.match-details strong,
+.donation-history-details strong {
+  color: #333;
+  margin-right: 0.5rem;
+  font-weight: 600;
+}
+
+/* Matches content container */
+.matches-content {
+  border: 1px solid rgba(222, 226, 230, 0.3);
+  border-radius: 8px;
+  padding: 0.8rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background: rgba(255, 255, 255, 0.3);
+  overflow-y: auto;
+  position: relative;
+  min-height: 200px;
+  backdrop-filter: blur(8px);
+}
+
+.profile-info {
+  margin-bottom: 1.2rem;
+}
+
+.request-form-section {
+  background: rgba(255, 255, 255, 0.4);
+  padding: 1.2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  height: 320px;
+  display: flex;
+  flex-direction: column;
+  backdrop-filter: blur(8px);
+}
+
+/* Form styling */
+.request-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  flex: 1;
+  padding: 0.2rem 0;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.form-group label {
+  font-weight: 600;
+  color: #333;
+  font-size: 0.9rem;
+}
+
+.form-group input,
+.form-group textarea {
+  background: rgba(255, 255, 255, 0.4);
+  padding: 0.5rem;
+  border: 1px solid rgba(221, 221, 221, 0.4);
+  border-radius: 4px;
+  font-size: 0.9rem;
+  backdrop-filter: blur(4.5px);
+}
+
+/* Organization specific form elements */
+.form-group textarea.org-description {
+  padding: 0.5rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  height: auto;
+  resize: vertical;
+}
+
+.org-submit-btn {
+  padding: 0.5rem;
+  background: #676767;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: background-color 0.2s;
+  width: 100%;
+}
+
+.org-submit-btn:hover {
+  background: #484848;
+}
+
+/* Keep general button styles for other buttons like accept */
+.accept-btn {
+  padding: 0.4rem 0.8rem;
+  background: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: background-color 0.2s;
+}
+
+.accept-btn:hover {
+  background: #3d8b40;
+}
+
+.matches-label {
+  color: #4CAF50;
+  font-weight: 600;
+  font-size: 0.9rem;
+  margin: 0.8rem 0;
+  padding-left: 1.5rem;
+}
+
+.matching-donations {
+  margin-top: 1rem;
+  padding-left: 1.5rem;
+  border-left: 2px dashed #4CAF50;
+  margin-left: 1rem;
+}
+
+/* Organization dashboard title */
+.organization-dashboard h1 {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  font-size: 1.8rem;
+  color:#000000e8;
+}
+
+/* Table content adjustments */
+.matches-table-row {
+  padding: 0.5rem;
+}
+
+.request-item {
+  position: relative;
+  z-index: 1;
+  background: rgba(255, 255, 255, 0.4);
+  border: 1px solid rgba(222, 226, 230, 0.3);
+  border-radius: 8px;
+  margin-bottom: 0.6rem;
+  min-height: fit-content;
+  backdrop-filter: blur(8px);
+}
+
+.request-item.expanded {
+  z-index: 2;
+}
+
+.request-header {
+  padding: 0.6rem;
+  background: rgba(248, 249, 250, 0.4);
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid rgba(222, 226, 230, 0.3);
+  backdrop-filter: blur(8px);
+}
+
+.request-header:hover {
+  background: #f1f1f1;
+}
+
+.request-title {
+  font-weight: 600;
+  color: #333;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.request-content {
+  max-height: 0;
+  transition: all 0.3s ease-out;
+  overflow: hidden;
+  opacity: 0;
+}
+
+.request-content.expanded {
+  max-height: 1000px;
+  opacity: 1;
+  overflow-y: auto;
+  padding: 0.6rem;
+}
+
+.donor-list {
+  padding: 0.6rem;
+  max-height: 500px;
+  overflow-y: auto;
+  background: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(8px);
+}
+
+/* Style the donor list scrollbar */
+.donor-list::-webkit-scrollbar {
+  width: 6px;
+}
+
+.donor-list::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 3px;
+}
+
+.donor-list::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 3px;
+}
+
+.donor-list::-webkit-scrollbar-thumb:hover {
+  background: #666;
+}
+
+/* Adjust donor item spacing */
+.donor-item {
+  border: 1px solid rgba(238, 238, 238, 0.3);
+  border-radius: 6px;
+  margin-bottom: 0.5rem;
+  background: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(8px);
+}
+
+.donor-item:last-child {
+  margin-bottom: 0; /* Remove margin from last item */
+}
+
+.donor-details {
+  padding: 0.4rem;
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: relative;
+  z-index: 5;
+  backdrop-filter: blur(8px);
+}
+
+/* Update grid layout */
+.donor-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  padding-right: 5px;
+  min-height: fit-content;
+  margin-bottom: 0.4rem;
+}
+
+.info-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 columns for first row */
+  gap: 0.4rem;
+}
+
+.info-row.address {
+  grid-template-columns: 1fr; /* Full width for address */
+}
+
+.info-item {
+  display: flex;
+  flex-direction: column;
+  min-height: fit-content;
+  background: rgba(255, 255, 255, 0.4);
+  padding: 0.3rem;
+  border-radius: 4px;
+  word-break: break-word;
+  backdrop-filter: blur(4px);
+}
+
+.info-label {
+  font-size: 0.8rem;
+  color: #666;
+  margin-bottom: 0.1rem;
+}
+
+.info-value {
+  font-weight: 500;
+  color: #333;
+  word-break: break-word;
+  line-height: 1.4;
+}
+
+.expand-icon {
+  transition: transform 0.3s ease;
+}
+
+.expand-icon.rotated {
+  transform: rotate(180deg);
+}
+
+/* Adjust scrollbar styling for all scrollable sections */
+.matches-content::-webkit-scrollbar,
+.request-content::-webkit-scrollbar,
+.donor-content::-webkit-scrollbar {
+  width: 6px;
+}
+
+.matches-content::-webkit-scrollbar-track,
+.request-content::-webkit-scrollbar-track,
+.donor-content::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 3px;
+}
+
+.matches-content::-webkit-scrollbar-thumb,
+.request-content::-webkit-scrollbar-thumb,
+.donor-content::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 3px;
+}
+
+.matches-content::-webkit-scrollbar-thumb:hover,
+.request-content::-webkit-scrollbar-thumb:hover,
+.donor-content::-webkit-scrollbar-thumb:hover {
+  background: #666;
+}
+
+/* Adjust actions section */
+.donor-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 0.4rem;
+  padding-top: 0.4rem;
+  border-top: 1px solid rgba(238, 238, 238, 0.3);
+  background: rgba(248, 249, 250, 0.4);
+  border-radius: 4px;
+  padding: 0.4rem;
+  backdrop-filter: blur(8px);
+}
+
+.status-badge {
+  padding: 0.3rem;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.accept-btn:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
+
+/* Scrollbar styling for all scrollable sections */
+.matches-content::-webkit-scrollbar,
+.donor-list::-webkit-scrollbar,
+.donor-details::-webkit-scrollbar,
+.request-content::-webkit-scrollbar {
+  width: 6px;
+  display: none; /* Hide by default */
+}
+
+/* Show scrollbar when hovering over scrollable content */
+.matches-content:hover::-webkit-scrollbar,
+.donor-list:hover::-webkit-scrollbar,
+.donor-details:hover::-webkit-scrollbar,
+.request-content:hover::-webkit-scrollbar {
+  display: block;
+}
+
+/* Scrollbar track */
+.matches-content::-webkit-scrollbar-track,
+.donor-list::-webkit-scrollbar-track,
+.donor-details::-webkit-scrollbar-track,
+.request-content::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 3px;
+}
+
+/* Scrollbar thumb */
+.matches-content::-webkit-scrollbar-thumb,
+.donor-list::-webkit-scrollbar-thumb,
+.donor-details::-webkit-scrollbar-thumb,
+.request-content::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 3px;
+}
+
+/* Scrollbar thumb hover */
+.matches-content::-webkit-scrollbar-thumb:hover,
+.donor-list::-webkit-scrollbar-thumb:hover,
+.donor-details::-webkit-scrollbar-thumb:hover,
+.request-content::-webkit-scrollbar-thumb:hover {
+  background: #666;
+}
+
+/* Fixed header styles */
+.previous-donations-section .donations-table thead {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  background: white;
+}
+
+.previous-donations-section .donations-table th {
+  padding: 0.5rem;
+  text-align: center;
+  font-weight: 600;
+  color: #333;
+  background: white;
+  border-bottom: 2px solid #dee2e6;
+}
+
+/* Scrollable body styles */
+.previous-donations-section .donations-table tbody {
+  display: block;
+  overflow-y: auto;
+  max-height: 120px; /* Adjust based on your needs */
+}
+
+/* Make table rows display properly */
+.previous-donations-section .donations-table tr {
+  display: table;
+  width: 100%;
+  table-layout: fixed;
+}
+
+/* Equal width columns */
+.previous-donations-section .donations-table th,
+.previous-donations-section .donations-table td {
+  width: 33.33%;
+  padding: 0.5rem;
+  text-align: center;
+}
+
+/* Style scrollbar */
+.previous-donations-section .donations-table tbody::-webkit-scrollbar {
+  width: 6px;
+  display: none;
+}
+
+.previous-donations-section .donations-table tbody:hover::-webkit-scrollbar {
+  display: block;
+}
+
+.previous-donations-section .donations-table tbody::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 3px;
+}
+
+.previous-donations-section .donations-table tbody::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 3px;
+}
+
+.previous-donations-section .donations-table tbody::-webkit-scrollbar-thumb:hover {
+  background: #666;
+}
+
+.no-matches {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #666;
+  font-size: 0.95rem;
+  text-align: center;
+  padding: 1rem 2rem;
+  border: 2px dashed #ddd;
+  border-radius: 8px;
+  background-color: rgba(248, 249, 250, 0.8);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  min-width: 200px;
+  width: auto;
+  z-index: 1;
+  margin: 0;
+}
+
+.no-matches p {
+  margin: 0;
+  font-weight: 500;
+}
+
+.organization-welcome {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  font-size: 1.8rem;
+  color: #222;
+  font-weight: 600;
+}
+
+.status-accepted {
+  border-radius: 4px;
+  background-color: rgba(85 191 89 / 61%);
+  color: white;
+  backdrop-filter: blur(4px);
+}
+
+.status-available {
+  border-radius: 4px;
+  background-color: rgba(213 200 83 / 58%);
+  color: rgb(255, 255, 255);
+  backdrop-filter: blur(4px);
+}

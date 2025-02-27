@@ -1,0 +1,136 @@
+.available-donations {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.available-donations h3 {
+  color: #2c3e50;
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+}
+
+.donations-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.donation-match-card {
+  background: white;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-left: 4px solid #4CAF50;
+  transition: transform 0.2s ease;
+}
+
+.donation-match-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.donation-match-card h4 {
+  margin: 0 0 15px 0;
+  color: #2c3e50;
+  font-size: 1.2rem;
+}
+
+.donation-details {
+  margin-bottom: 15px;
+}
+
+.donation-details p {
+  margin: 8px 0;
+  color: #666;
+  line-height: 1.4;
+}
+
+.donation-details strong {
+  color: #2c3e50;
+  font-weight: 600;
+}
+
+.accept-btn {
+  width: 100%;
+  padding: 12px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 1rem;
+  transition: background-color 0.2s;
+}
+
+.accept-btn:hover {
+  background-color: #45a049;
+}
+
+.accept-btn:active {
+  transform: scale(0.98);
+}
+
+.accept-btn:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+.loading-container {
+  text-align: center;
+  padding: 40px;
+  color: #666;
+}
+
+.loading-container p {
+  font-size: 1.1rem;
+  color: #666;
+}
+
+.no-donations {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 30px;
+  background: #f8f9fa;
+  border-radius: 8px;
+  color: #666;
+  font-size: 1.1rem;
+  border: 1px dashed #dee2e6;
+}
+
+.cancel-btn {
+  width: 100%;
+  padding: 12px;
+  background-color: #DC3545;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.2s;
+  margin-top: 15px;
+}
+
+.cancel-btn:hover {
+  background-color: #c82333;
+}
+
+@media (max-width: 768px) {
+  .available-donations {
+    padding: 15px;
+  }
+
+  .donations-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .donation-match-card {
+    padding: 15px;
+  }
+
+  .accept-btn {
+    padding: 10px;
+  }
+}

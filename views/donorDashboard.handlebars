@@ -1,0 +1,34 @@
+<div class="your-donations">
+  <h2>Your Donations</h2>
+  {{#each donations}}
+    <div class="donation-card">
+      <!-- ... existing donation details ... -->
+      
+      {{#if matchedWith}}
+        {{#if (eq status 'requested')}}
+          <button onclick="location.href='/donor/accept-donation/{{_id}}'" class="accept-btn">
+            Accept Donation
+          </button>
+        {{/if}}
+        
+        {{#if (eq status 'accepted')}}
+          <div class="matched-org">
+            <h3>Matched with Organization:</h3>
+            <p>Name: {{matchedWith.userId.name}}</p>
+            <p>Email: {{matchedWith.userId.email}}</p>
+            <p>Phone: {{matchedWith.userId.phone}}</p>
+            <p>Address: {{matchedWith.userId.address}}</p>
+            <button onclick="location.href='/donor/cancel-donation/{{_id}}'" class="cancel-btn">
+              Cancel Request
+            </button>
+            <p class="thank-you">Thank you for your donation!</p>
+          </div>
+        {{/if}}
+
+        {{#if (eq status 'cancelled')}}
+          <p class="status-cancelled">Donation Cancelled</p>
+        {{/if}}
+      {{/if}}
+    </div>
+  {{/each}}
+</div>

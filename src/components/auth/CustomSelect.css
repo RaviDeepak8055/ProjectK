@@ -1,0 +1,94 @@
+.custom-select {
+  position: relative;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  padding-right: 0;
+}
+
+.custom-select span {
+  flex: 1;
+  color: white;
+  padding-right: 0.75rem;
+}
+
+.custom-select span.placeholder {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.arrow-icon {
+  position: absolute;
+  right: -0.6rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: white;
+  transition: transform 0.3s ease;
+  pointer-events: none;
+}
+
+.arrow-icon.open {
+  transform: translateY(-50%) rotate(180deg);
+}
+
+.select-icon {
+  position: absolute;
+  right: 2rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: white;
+  pointer-events: none;
+  font-size: 1.1rem;
+}
+
+.select-dropdown {
+  position: absolute;
+  top: calc(100% + 5px);
+  left: 0;
+  width: 100%;
+  background: #333;
+  border: 2px solid hsla(0, 0%, 100%, .7);
+  border-radius: 1rem;
+  overflow: hidden;
+  z-index: 1000;
+}
+
+.select-dropdown ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.select-dropdown li {
+  padding: 0.75rem 1.25rem;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.select-dropdown li:hover {
+  background-color: hsla(0, 0%, 100%, .2);
+}
+
+.select-dropdown li.selected {
+  background-color: hsla(0, 0%, 100%, .2);
+}
+
+/* Scrollbar styling */
+.select-dropdown ul::-webkit-scrollbar {
+  width: 8px;
+}
+
+.select-dropdown ul::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.select-dropdown ul::-webkit-scrollbar-thumb {
+  background: hsla(0, 0%, 100%, .3);
+  border-radius: 4px;
+}
+
+.select-dropdown ul::-webkit-scrollbar-thumb:hover {
+  background: hsla(0, 0%, 100%, .4);
+}

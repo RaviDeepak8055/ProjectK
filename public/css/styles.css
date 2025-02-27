@@ -1,0 +1,132 @@
+.matched-donor, .matched-org {
+  background: #f5f5f5;
+  padding: 15px;
+  margin-top: 10px;
+  border-radius: 5px;
+}
+
+.thank-you {
+  color: #28a745;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.status-accepted {
+  color: #28a745;
+  font-weight: bold;
+}
+
+.cancel-btn {
+  background: #dc3545;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.cancel-btn:hover {
+  background: #c82333;
+}
+
+.status-cancelled {
+  color: #dc3545;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.accept-btn {
+  background: #28a745;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.accept-btn:hover {
+  background: #218838;
+}
+
+.request-card .status-accepted {
+  display: inline-block;
+  margin-left: 10px;
+  vertical-align: middle;
+}
+
+.request-card .cancel-btn {
+  margin-right: 10px;
+}
+
+.action-buttons {
+  margin-top: 15px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.action-buttons form {
+  margin: 0;
+}
+
+.action-buttons button {
+  width: 100%;
+  min-width: 150px;
+}
+
+.status-accepted {
+  margin-left: 15px;
+  padding: 8px 16px;
+  background-color: #e8f5e9;
+  border-radius: 4px;
+  color: #28a745;
+  font-weight: bold;
+}
+
+.accept-btn, .cancel-btn {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.accept-btn {
+  background: #28a745;
+  color: white;
+}
+
+.accept-btn:hover {
+  background: #218838;
+}
+
+.cancel-btn {
+  background: #dc3545;
+  color: white;
+}
+
+.cancel-btn:hover {
+  background: #c82333;
+}
+
+.status-accepted {
+  color: #28a745;
+  font-weight: bold;
+  margin-left: 10px;
+}
+
+.status-cancelled {
+  color: #dc3545;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.matched-donor {
+  position: relative;
+}
+
+.matched-donor .cancel-btn {
+  margin-top: 10px;
+  display: block;
+}

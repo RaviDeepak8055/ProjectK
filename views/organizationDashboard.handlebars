@@ -1,0 +1,43 @@
+<div class="food-requests">
+  <h2>Your Food Requests</h2>
+  {{#each requests}}
+    <div class="request-card">
+      <p>Quantity: {{quantity}}</p>
+      <p>Description: {{description}}</p>
+      <p>Current Status: {{status}}</p>
+      
+      {{#if matchedWith}}
+        <div class="matched-donor">
+          <h3>Matched with Donor:</h3>
+          <p>Name: {{matchedWith.userId.name}}</p>
+          <p>Email: {{matchedWith.userId.email}}</p>
+          <p>Phone: {{matchedWith.userId.phone}}</p>
+          <p>Address: {{matchedWith.userId.address}}</p>
+          
+          <div class="action-buttons">
+            {{#if (eq status 'requested')}}
+              <form action="/organization/accept-donation/{{_id}}" method="POST">
+                <button type="submit" class="accept-btn">
+                  Accept Donation
+                </button>
+              </form>
+            {{/if}}
+            
+            {{#if (eq status 'accepted')}}
+              <form action="/organization/cancel-request/{{_id}}" method="POST">
+                <button type="submit" class="cancel-btn">
+                  Cancel Food Request
+                </button>
+              </form>
+              <p class="status-accepted">Donation Accepted</p>
+            {{/if}}
+          </div>
+
+          {{#if (eq status 'cancelled')}}
+            <p class="status-cancelled">Request Cancelled</p>
+          {{/if}}
+        </div>
+      {{/if}}
+    </div>
+  {{/each}}
+</div>

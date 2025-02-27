@@ -1,0 +1,1111 @@
+/*=============== GOOGLE FONTS ===============*/
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
+
+/*=============== VARIABLES CSS ===============*/
+:root {
+  /*========== Colors ==========*/
+  /*Color mode HSL(hue, saturation, lightness)*/
+  --white-color: hsl(0, 0%, 100%);
+  --black-color: hsl(0, 0%, 0%);
+
+  /*========== Font and typography ==========*/
+  /*.5rem = 8px | 1rem = 16px ...*/
+  --body-font: "Poppins", sans-serif;
+  --h1-font-size: 2rem;
+  --normal-font-size: 1rem;
+  --small-font-size: .813rem;
+}
+
+/*=============== BASE ===============*/
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body,
+input,
+button {
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/*=============== SIGNUP ===============*/
+.signup-container {
+  position: relative;
+  height: 100vh;
+  display: grid;
+  align-items: center;
+}
+
+.signup-container::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: url('../../assets/login-bg.png');
+  background-size: cover;
+  object-fit: cover;
+  object-position: center;
+  z-index: -1;
+}
+
+/* Donor specific styles */
+.donor-form {
+  position: relative;
+  margin-inline: 1.5rem;
+  background-color: hsla(0, 0%, 100%, .01);
+  border: 2px solid hsla(0, 0%, 100%, .7);
+  padding: 1rem 1rem;
+  color: var(--white-color);
+  border-radius: 1rem;
+  backdrop-filter: blur(16px);
+}
+
+.donor-form .heading {
+  text-align: center;
+  font-size: var(--h1-font-size);
+  margin-bottom: 0.5rem;
+  color: var(--white-color);
+}
+
+.donor-form form {
+  display: grid;
+  row-gap: 0.35rem;
+  margin-bottom: 0;
+}
+
+/* Organization specific styles */
+.org-form {
+  position: relative;
+  margin-inline: 1.5rem;
+  background-color: hsla(0, 0%, 100%, .01);
+  border: 2px solid hsla(0, 0%, 100%, .7);
+  padding: 0.5rem 1rem;
+  color: var(--white-color);
+  border-radius: 1rem;
+  backdrop-filter: blur(16px);
+}
+
+.org-form .heading {
+  text-align: center;
+  font-size: var(--h1-font-size);
+  margin-bottom: 0.25rem;
+  color: var(--white-color);
+}
+
+.org-form form {
+  display: grid;
+  row-gap: 0.25rem;
+}
+
+.form_main {
+  position: relative;
+  margin-inline: 1.5rem;
+  background-color: hsla(0, 0%, 100%, .01);
+  border: 2px solid hsla(0, 0%, 100%, .7);
+  padding: 1rem 1rem;
+  color: var(--white-color);
+  border-radius: 1rem;
+  backdrop-filter: blur(16px);
+}
+
+.heading {
+  text-align: center;
+  font-size: var(--h1-font-size);
+  margin-bottom: 0.5rem;
+  color: var(--white-color);
+}
+
+.form_main form {
+  display: grid;
+  row-gap: 0.35rem;
+  margin-bottom: 0;
+}
+
+.form_main form > :last-child {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.login__box {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr max-content;
+  column-gap: .75rem;
+  align-items: center;
+  border: 2px solid hsla(0, 0%, 100%, .7);
+  padding-inline: 1.25rem;
+  border-radius: 4rem;
+}
+
+.login__input {
+  width: 100%;
+  background: none;
+  color: var(--white-color);
+  padding-block: 0.6rem;
+  border: none;
+  outline: none;
+}
+
+.login__input::placeholder {
+  color: var(--white-color);
+  transition: opacity 0.3s ease;
+}
+
+.login__input:focus::placeholder {
+  opacity: 0;
+}
+
+/* Update select placeholder color */
+.login__input option:first-child {
+  color: var(--white-color);
+}
+
+/* Submit button styles */
+#button {
+  position: relative;
+  width: 60%;
+  padding: 0.6rem;
+  background-color: var(--white-color);
+  border: none;
+  border-radius: 4rem;
+  color: rgb(56, 54, 197);
+  font-weight: 500;
+  cursor: pointer;
+  text-transform: none;
+  font-size: 1.2rem;
+  font-family: Luminari, fantasy;
+  letter-spacing: 1px;
+  display: block;
+  margin: 0.5rem auto 0;
+}
+
+#button:hover {
+  background-color: hsl(0, 0%, 95%);
+  color: var(--black-color);
+}
+
+/* Select field styles */
+select.inputField {
+  appearance: none;
+  color: var(--white-color);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* Style the placeholder option */
+select.inputField option[value=""] {
+  color: var(--white-color);
+  font-size: var(--normal-font-size);
+}
+
+/* Style other options */
+select.inputField option {
+  background-color: hsla(0, 0%, 20%, 0.9);
+  color: var(--white-color);
+  padding: 1rem;
+}
+
+/* Add dropdown arrow */
+.login__box select.inputField {
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 1.25rem center;
+  background-size: 1rem;
+  padding-right: 3rem;
+}
+
+/* Add hover effect */
+.login__box select.inputField:hover {
+  border-color: var(--white-color);
+}
+
+/* Add focus effect */
+.login__box select.inputField:focus {
+  border-color: var(--white-color);
+  outline: none;
+}
+
+/* Animation for dropdown */
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+select.inputField option {
+  animation: slideDown 0.2s ease-out forwards;
+}
+
+/* Error message styles */
+.error-message, .popup-message {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  background-color: hsla(0, 0%, 0%, 0.8);
+  color: var(--white-color);
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  font-size: var(--small-font-size);
+  text-align: center;
+  backdrop-filter: blur(8px);
+  border: 1px solid hsla(0, 0%, 100%, 0.1);
+  z-index: 1000;
+  animation: fadeInRight 2s ease-in-out forwards;
+  min-width: 200px;
+  max-width: 80%;
+  width: auto;
+  white-space: normal;
+  word-wrap: break-word;
+  overflow: visible;
+  line-height: 1.4;
+}
+
+@keyframes fadeInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  15% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  85% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+}
+
+/*=============== BREAKPOINTS ===============*/
+@media screen and (min-width: 576px) {
+  .signup-container {
+    justify-content: center;
+  }
+  .form_main {
+    width: 420px;
+    padding: 1rem 2rem;
+  }
+  .org-form {
+    width: 420px;
+    padding: 0.5rem 2rem;
+  }
+}
+
+.title {
+  font-size: 24px;
+  font-weight: 600;
+  letter-spacing: -1px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding-left: 30px;
+  color: #00bfff;
+  margin-bottom: 20px;
+}
+
+.title::before {
+  width: 18px;
+  height: 18px;
+}
+
+.title::after {
+  width: 18px;
+  height: 18px;
+  animation: pulse 1s linear infinite;
+}
+
+.title::before,
+.title::after {
+  position: absolute;
+  content: "";
+  height: 16px;
+  width: 16px;
+  border-radius: 50%;
+  left: 0px;
+  background-color: #00bfff;
+}
+
+.message {
+  font-size: 14px;
+  color: #ff3333;
+  background-color: rgba(255, 51, 51, 0.1);
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 15px;
+}
+
+.signin {
+  display: none;
+}
+
+label {
+  position: relative;
+  width: 100%;
+  margin-bottom: 5px;
+}
+
+.input {
+  background-color: #333;
+  color: #fff;
+  width: 100%;
+  padding: 20px 12px 8px 12px;
+  outline: 0;
+  border: 1px solid rgba(105, 105, 105, 0.397);
+  border-radius: 10px;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+label span {
+  color: rgba(255, 255, 255, 0.5);
+  position: absolute;
+  left: 12px;
+  top: 0px;
+  font-size: 0.9em;
+  cursor: text;
+  transition: 0.3s ease;
+  padding: 0 4px;
+}
+
+label .input:placeholder-shown + span {
+  top: 14px;
+  font-size: 0.9em;
+}
+
+label .input:focus + span,
+label .input:valid + span {
+  color: #00bfff;
+  top: 0px;
+  font-size: 0.7em;
+  font-weight: 600;
+}
+
+.form label input[type="password"] {
+  background-color: #333;
+  color: #fff;
+  width: 100%;
+  padding: 20px 12px 8px 12px;
+  outline: 0;
+  border: 1px solid rgba(105, 105, 105, 0.397);
+  border-radius: 10px;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+.form label input[type="password"] + span {
+  color: rgba(255, 255, 255, 0.5);
+  position: absolute;
+  left: 10px;
+  top: 0px;
+  font-size: 0.9em;
+  cursor: text;
+  transition: 0.3s ease;
+}
+
+.form label input[type="password"]:focus + span,
+.form label input[type="password"]:valid + span {
+  color: #00bfff;
+  top: 0px;
+  font-size: 0.7em;
+  font-weight: 600;
+}
+
+.form .password-input-container {
+  position: relative;
+  width: 100%;
+}
+
+.submit {
+  border: none;
+  outline: none;
+  padding: 12px;
+  border-radius: 10px;
+  color: #fff;
+  font-size: 16px;
+  transition: .3s ease;
+  background-color: #00bfff;
+  cursor: pointer;
+  margin-top: 10px;
+  width: 100%;
+}
+
+.submit:hover {
+  background-color: #00bfff96;
+}
+
+.submit:disabled {
+  background-color: #666;
+  cursor: not-allowed;
+}
+
+@keyframes pulse {
+  from {
+    transform: scale(0.9);
+    opacity: 1;
+  }
+
+  to {
+    transform: scale(1.8);
+    opacity: 0;
+  }
+}
+
+select.input {
+  width: 100%;
+  padding-right: 40px;
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2300bfff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 16px;
+  box-sizing: border-box;
+}
+
+.dropdown-container {
+  position: relative;
+  width: 100%;
+  margin-bottom: 5px;
+  overflow: visible;
+}
+
+.custom-select {
+  width: 100%;
+  position: relative;
+  overflow: visible;
+}
+
+.selected-option {
+  background-color: #333;
+  color: #fff;
+  width: 100%;
+  padding: 20px 12px 8px 12px;
+  outline: 0;
+  border: 1px solid rgba(105, 105, 105, 0.397);
+  border-radius: 10px;
+  font-size: 14px;
+  box-sizing: border-box;
+  cursor: pointer;
+  position: relative;
+}
+
+.selected-option::after {
+  content: '';
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 5px solid #00bfff;
+}
+
+.options-list {
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background: #333;
+  border-radius: 10px;
+  margin-top: 5px;
+  padding: 0;
+  list-style: none;
+  box-shadow: 0px 3px 5px -1px #000;
+  z-index: 1000;
+  max-height: 0;
+  transition: all 0.3s ease;
+}
+
+.options-list.show {
+  visibility: visible;
+  opacity: 1;
+  max-height: 200px;
+  padding: 5px 0;
+  overflow-y: auto;
+}
+
+.options-list li {
+  padding: 8px 15px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: #fff;
+  border-left: 2px solid transparent;
+  white-space: nowrap;
+  font-size: 14px;
+}
+
+.options-list li:hover {
+  background-color: #444;
+  padding-left: 25px;
+  border-left: 2px solid #00bfff;
+}
+
+/* Adjust the label for the dropdown */
+.dropdown-container span {
+  color: rgba(255, 255, 255, 0.5);
+  position: absolute;
+  left: 12px;
+  top: 0px;
+  font-size: 0.9em;
+  cursor: text;
+  transition: 0.3s ease;
+  padding: 0 4px;
+  pointer-events: none;
+}
+
+.dropdown-container .selected-option:focus + span,
+.dropdown-container .selected-option.has-value + span {
+  color: #00bfff;
+  top: 0px;
+  font-size: 0.7em;
+  font-weight: 600;
+}
+
+.password-error {
+  font-size: 12px;
+  color: #ff3333;
+  background-color: rgba(255, 51, 51, 0.1);
+  padding: 8px;
+  border-radius: 5px;
+  margin-top: -10px;
+  margin-bottom: 5px;
+  text-align: center;
+}
+
+/* Adjust input styles for error state */
+label input.input:invalid:focus {
+  border-color: #ff3333;
+}
+
+/* Make the confirm password input match the password input style */
+label input[name="confirmPassword"] {
+  background-color: #333;
+  color: #fff;
+  width: 100%;
+  padding: 20px 12px 8px 12px;
+  outline: 0;
+  border: 1px solid rgba(105, 105, 105, 0.397);
+  border-radius: 10px;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+.password-fields-container {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.password-field {
+  position: relative;
+  width: 100%;
+  margin-bottom: 0;
+}
+
+.password-field input {
+  padding-right: 40px !important;
+  margin: 0;
+}
+
+.password-field span {
+  color: rgba(255, 255, 255, 0.5);
+  position: absolute;
+  left: 12px;
+  top: 14px;
+  font-size: 0.9em;
+  cursor: text;
+  transition: 0.3s ease;
+  padding: 0 4px;
+  background: transparent;
+}
+
+.password-field input:focus ~ span,
+.password-field input:valid ~ span {
+  color: #00bfff;
+  top: 0px;
+  font-size: 0.7em;
+  font-weight: 600;
+  background-color: #333;
+}
+
+.popup-error.password-popup {
+  top: calc(100% + 5px);
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* Remove duplicate styles */
+label input[name="confirmPassword"] {
+  margin: 0;
+}
+
+/* Adjust form gap if needed */
+.form {
+  gap: 15px;
+}
+
+.popup-error {
+  position: absolute;
+  background-color: #ff3333;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 4px;
+  font-size: 12px;
+  animation: fadeInOut 2s ease-in-out;
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.organization-popup {
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-bottom: 5px;
+}
+
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+    transform: translateX(-50%) translateY(10px);
+  }
+  15% {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+  85% {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(-50%) translateY(-10px);
+  }
+}
+
+/* Add a small arrow to the popup */
+.popup-error::before {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+}
+
+.organization-popup::before {
+  border-top: 5px solid #ff3333;
+  bottom: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* New styles for donor signup */
+.form_main {
+  position: relative;
+  width: 420px;
+  padding: 2.5rem;
+  background-color: hsla(0, 0%, 100%, .01);
+  border: 2px solid hsla(0, 0%, 100%, .7);
+  border-radius: 1rem;
+  backdrop-filter: blur(16px);
+  color: white;
+}
+
+.heading {
+  font-size: 2em;
+  color: #2e2e2e;
+  font-weight: 700;
+  margin: 0 0 25px 0;
+  text-transform: uppercase;
+}
+
+.inputContainer {
+  width: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.inputIcon {
+  position: absolute;
+  left: 10px;
+  color: #666;
+}
+
+.inputField {
+  width: 100%;
+  height: 40px;
+  background-color: transparent;
+  border: none;
+  border-bottom: 2px solid rgb(173, 173, 173);
+  border-radius: 30px;
+  margin: 8px 0;
+  color: black;
+  font-size: 0.9em;
+  font-weight: 500;
+  box-sizing: border-box;
+  padding: 0 15px 0 35px;
+  min-width: 300px;
+}
+
+.inputField:focus {
+  outline: none;
+  border-bottom: 2px solid rgb(199, 114, 255);
+}
+
+.inputField::placeholder {
+  color: rgb(80, 80, 80);
+  font-size: 1em;
+  font-weight: 500;
+}
+
+#button {
+  position: relative;
+  width: 60%;
+  border: 2px solid #8000ff;
+  background-color: #8000ff;
+  height: 40px;
+  color: white;
+  font-size: 0.9em;
+  font-weight: 500;
+  letter-spacing: 1px;
+  border-radius: 30px;
+  cursor: pointer;
+  overflow: hidden;
+  min-width: auto;
+}
+
+#button::after {
+  content: "";
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.253);
+  height: 100%;
+  width: 150px;
+  top: 0;
+  left: -200px;
+  border-bottom-right-radius: 100px;
+  border-top-left-radius: 100px;
+  filter: blur(10px);
+  transition-duration: .5s;
+}
+
+#button:hover::after {
+  transform: translateX(600px);
+  transition-duration: .5s;
+}
+
+/* Password field specific styles */
+.password-container {
+  position: relative;
+  width: 100%;
+}
+
+.error-message {
+  color: #ff3333;
+  font-size: 0.8em;
+  margin-top: 5px;
+  text-align: center;
+}
+
+/* Adjust password input container */
+.password-container .inputField {
+  padding-right: 40px;
+  width: 100%;
+  min-width: 300px;
+}
+
+/* Organization type select field */
+select.inputField {
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23666' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 16px;
+  padding-right: 35px;
+  min-width: 300px;
+  width: 100%;
+}
+
+select.inputField option {
+  color: #333;
+  background: white;
+  font-size: 14px;
+  padding: 10px;
+}
+
+/* Add FaBuilding icon */
+.inputIcon.fa-building {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.login-container::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: url('C:\Users\ravid\Documents\HToH\src\assets/login-bg.png');
+  background-size: cover;
+  background-position: center;
+  z-index: -1;
+}
+
+/* Update form spacing */
+.form_main form {
+  display: grid;
+  gap: 1.25rem;
+  padding-top: 1rem;
+}
+
+/* Password toggle buttons for all scenarios */
+/* Donor signup password toggle */
+.password-toggle-donor {
+  position: absolute;
+  right: 1.2rem;
+  top: 55%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: rgb(241, 241, 241);
+  font-size: 1.2rem;
+  padding: 0;
+  opacity: 0.8;
+  z-index: 2;
+}
+
+/* Donor signup confirm password toggle */
+.password-toggle-donor-confirm {
+  position: absolute;
+  right: 1.2rem;
+  top: 55%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: rgb(241, 241, 241);
+  font-size: 1.2rem;
+  padding: 0;
+  opacity: 0.8;
+  z-index: 2;
+}
+
+/* Organization signup password toggle */
+.password-toggle-org {
+  position: absolute;
+  right: 1.2rem;
+  top: 55%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: rgb(241, 241, 241);
+  font-size: 1.2rem;
+  padding: 0;
+  opacity: 0.8;
+  z-index: 2;
+}
+
+/* Organization signup confirm password toggle */
+.password-toggle-org-confirm {
+  position: absolute;
+  right: 1.2rem;
+  top: 55%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: rgb(241, 241, 241);
+  font-size: 1.2rem;
+  padding: 0;
+  opacity: 0.8;
+  z-index: 2;
+}
+
+/* Custom select dropdown toggle */
+.custom-select-toggle {
+  position: absolute;
+  right: -0.65rem;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: rgb(241, 241, 241);
+  font-size: 1.2rem;
+  padding: 0;
+  opacity: 0.8;
+  z-index: 2;
+  transition: transform 0.3s ease;
+}
+
+.custom-select-toggle.open {
+  transform: translateY(-50%) rotate(180deg);
+}
+
+.custom-select-toggle:hover {
+  opacity: 1;
+  color: white;
+}
+
+/* Add these styles to handle autofill */
+.login__input:-webkit-autofill,
+.login__input:-webkit-autofill:hover,
+.login__input:-webkit-autofill:focus {
+  -webkit-text-fill-color: var(--white-color);
+  -webkit-box-shadow: 0 0 0px 1000px transparent inset;
+  transition: background-color 5000s ease-in-out 0s;
+  background: none !important;
+}
+
+/* For Firefox */
+.login__input:-moz-autofill,
+.login__input:-moz-autofill:hover,
+.login__input:-moz-autofill:focus {
+  -moz-text-fill-color: var(--white-color);
+  box-shadow: 0 0 0px 1000px transparent inset;
+  transition: background-color 5000s ease-in-out 0s;
+  background: none !important;
+}
+
+/* For Edge */
+.login__input:-ms-autofill,
+.login__input:-ms-autofill:hover,
+.login__input:-ms-autofill:focus {
+  -ms-text-fill-color: var(--white-color);
+  box-shadow: 0 0 0px 1000px transparent inset;
+  transition: background-color 5000s ease-in-out 0s;
+  background: none !important;
+}
+
+/* Ensure text remains white */
+.login__input {
+  background: none !important;
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+/* Style the select dropdown */
+.login__box select.login__input {
+  width: 100%;
+  background: none;
+  color: var(--white-color);
+  padding-block: 0.85rem;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 1.25rem center;
+  background-size: 1rem;
+  padding-right: 3rem;
+  font-family: var(--body-font);
+  transition: all 0.3s ease;
+}
+
+/* Style individual options */
+.login__box select.login__input option {
+  background: white;
+  color: black;
+  padding: 10px 30px;
+  min-width: 250px;
+  text-align: left;
+  border-left: 2px solid transparent;
+  transition: all 0.3s ease;
+  animation: slideIn 0.3s ease forwards;
+  opacity: 0;
+  transform: translateY(-10px);
+}
+
+/* Animation for dropdown options */
+@keyframes slideIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Option hover effect */
+.login__box select.login__input option:hover {
+  padding-left: 40px;
+  border-left: 2px solid #3ca0e7;
+  background-color: white;
+  color: #3ca0e7;
+}
+
+/* Add animation delay for each option */
+.login__box select.login__input option:nth-child(1) { animation-delay: 0s; }
+.login__box select.login__input option:nth-child(2) { animation-delay: 0.1s; }
+.login__box select.login__input option:nth-child(3) { animation-delay: 0.2s; }
+.login__box select.login__input option:nth-child(4) { animation-delay: 0.3s; }
+
+/* Add smooth transition for select focus */
+.login__box select.login__input:focus {
+  border-color: var(--white-color);
+  transform: scale(1.01);
+}
+
+.popup-message {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  background-color: rgba(255, 0, 0, 0.8);
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  font-size: 0.8rem;
+  animation: fadeInOut 2s ease-in-out forwards;
+  z-index: 1000;
+}
+
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  15% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  85% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+}
